@@ -1,5 +1,15 @@
 /*NEWS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 
+.loading {
+    display: none;
+    text-align: center;
+    img {
+        height: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 .topNews {
     color: white;
     display: flex;
@@ -9,22 +19,18 @@
     li {
         width: 100%;
 
-        @include tablet {
+            @include tablet {
             width: 33%;
-        }
-        
-        @include desktop {
+            }
+
+            @include desktop {
             width: 25%;
-        }
+            }
 
         a {
             text-decoration: none;
         }
     }
-}
-
-.search_options {
-    display: inline-block;
 }
 
 select#categorySelect {

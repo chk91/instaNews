@@ -1,13 +1,16 @@
 $(document).ready(function () {
 
+// HEADER SHRINK @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 $('#newsSearch').on('change', function() {
    $('.menu').addClass('headerShrink');
 });
 
+// LOADING SIGN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$('#newsSearch').on('change', function() {
+   $('.loading').show();
+});
 
-// $('#newsSearch').addClass('headerShrink');
-
-
+// FETCHING API @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
   $('#newsSearch').on('change', function (event) {
     var select = $('select').val();
     event.preventDefault();
@@ -24,7 +27,7 @@ $('#newsSearch').on('change', function() {
       var apiData = data.results;
       var newsData = '';
 
-      
+// GOING THRU EACH ARRAY @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       $.each(apiData, function (key, value) {
         
         var apiMedia = value.multimedia;
@@ -44,11 +47,14 @@ $('#newsSearch').on('change', function() {
       });
 
 
-
-
     }).fail(function (err) {
       throw err;
 
+    })
+
+// HIDING THE LOGO @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    .always(function() {
+      $('.loading').hide();
     })
   });
 });

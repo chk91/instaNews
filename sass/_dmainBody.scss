@@ -21,19 +21,23 @@
 
 .headerShrink {
     height: 20vh;
-    transition: all 1s;
+    transition: 3s;
     img {
         height: 100px;
     }
 }
 
 .logo {
-    max-width: 300px;
     flex: 0 1 25%;
 
     @include desktop {
         max-width: 300px;
-        flex: none;
+    }
+}
+
+.search_options {
+    p {
+        padding: 5%;
     }
 }
 
