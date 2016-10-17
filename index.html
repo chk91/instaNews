@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="build/css/style.min.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
-    <title>InstaNews</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="reset.css">
+	<link rel="stylesheet" href="stylesheet.css">
+	<link rel="stylesheet" href="build/css/style.min.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1"
+		crossorigin="anonymous">
+	<title>InstaNews</title>
 </head>
-<body class="container">
 
-<header>
-        <h1>InstaNews</h1>
-</header>
+<body>
 
-<section class="menu container">
-    <img src="assets/images/nyt-logo.svg" alt="Logo"/>
+	<header class="menu container">
+		<!--<h1>InstaNews</h1>-->
 
-    <form action="#" id="newsSearch" method="post">
-              <div class="search_options">
-                <p>Choose a section:</p>
-                <select id="categorySelect" name="sections">
+        <div class="logo">
+		    <img src="assets/images/nyt-logo.svg" alt="Logo" />
+        </div>
+
+		<form action="#" class = "searchForm" id="newsSearch" method="post">
+			<div class="search_options">
+				<p>Choose a section:</p>
+				<select id="categorySelect" name="sections">
                    <option value="">Sections ...</options>
                    <option value="home">Home</option>
                    <option value="science" >Science</option>
@@ -28,19 +32,18 @@
                    <option value="technology">Technology</option>
                    <option value="fashion">Fashion</option>
                   </select>
-             </div>
-    </form>
+			</div>
+		</form>
+	</header>
 
-</section>
-
-<section class="newsApi container">
-   <ul class="topNews"></ul>
-</section>
-
+	<section class="newsApi">
+		<ul class="topNews"></ul>
+	</section>
 
 
-<footer class="container">
-        <p> <i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2016 <span class="strong">Instanews</span </p>
+
+	<footer class="container">
+		<p> <i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2016 <span class="strong">Instanews</span </p>
 </footer>
 
 <script src="jquery-3.1.1.js"></script>

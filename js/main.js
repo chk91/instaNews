@@ -1,5 +1,11 @@
 $(document).ready(function () {
 
+$('#newsSearch').on('change', function() {
+   $('.menu').addClass('headerShrink');
+});
+
+
+// $('#newsSearch').addClass('headerShrink');
 
 
   $('#newsSearch').on('change', function (event) {
@@ -29,7 +35,7 @@ $(document).ready(function () {
 
         newsData += '<li>';
         newsData += '<a href="'+apiUrl+'">'
-        newsData += '<div class="articleBox" style="background-image:url('+apiMedia[4].url+')">';
+        newsData += '<div class="articleBox" style="background-image:url('+apiMedia[4].url+')";>';
         newsData += '<p class="articleAbstract">'+abstract+''
         newsData += '</p></div></a></li>'
         

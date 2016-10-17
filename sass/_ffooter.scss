@@ -1,0 +1,14 @@
+/*FOOTER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+footer {
+    text-align: center;
+    height: 10vh;
+
+    @include desktop {
+        text-align: start;
+    }
+    
+    p {
+        margin: 5%;
+    }
+}

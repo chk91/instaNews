@@ -1,0 +1,54 @@
+/*NEWS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+.topNews {
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    li {
+        width: 100%;
+
+        @include tablet {
+            width: 33%;
+        }
+        
+        @include desktop {
+            width: 25%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+}
+
+.search_options {
+    display: inline-block;
+}
+
+select#categorySelect {
+    width: 200px;
+    height: 30px;
+    font-size: 1.4rem;
+}
+
+.articleBox {
+    height: 400px;
+    background-position: 50%;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    p {
+        align-self: flex-end;
+        line-height: 1.2rem;
+        font-size: 1.2rem; 
+    }
+}
+
+.articleAbstract {
+    background: rgba(0,0,0,.5);
+    padding: 2% 1%;
+}

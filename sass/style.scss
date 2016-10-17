@@ -1,60 +1,8 @@
-@import "reset";
 
-.container {
-    max-width: 1240px;
-}
-
-body {
-    background-color: black;
-}
-
-p {
-    color: white;
-}
-
-.strong {
-    text-transform: uppercase;
-}
-
-/*LOGO AND DROPDOWN MENU @@@@@@@@@@@@@@@@@@@*/
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-/*NEWS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-
-.topNews {
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-
-    li {
-        width: 100%;
-    }
-}
-
-.articleBox {
-    height: 400px;
-    background-position: 50%;
-    background-size: cover;
-}
-
-/*FOOTER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
-
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-@media all and (min-width:600px) {
-
-}
-
-@media all and (min-width:1000px) {
-    
-}
+@import "areset";
+@import "mediaQuery";
+@import "bfonts";
+@import "cglobal";
+@import "dmainBody";
+@import "eapiSection";
+@import "ffooter";

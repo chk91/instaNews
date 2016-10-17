@@ -1,0 +1,48 @@
+/*LOGO AND DROPDOWN MENU @@@@@@@@@@@@@@@@@@@*/
+
+.menu {
+    display: flex;
+    align-content: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 85vh;
+
+    @include tablet {
+        align-items: center;
+        width: 100%;
+        height: 80vh;
+        flex-flow: row wrap;
+    }
+
+    @include desktop {
+        justify-content: flex-start;
+    }
+}
+
+.headerShrink {
+    height: 20vh;
+    transition: all 1s;
+    img {
+        height: 100px;
+    }
+}
+
+.logo {
+    max-width: 300px;
+    flex: 0 1 25%;
+
+    @include desktop {
+        max-width: 300px;
+        flex: none;
+    }
+}
+
+.searchForm {
+    flex: 0 1 75%;
+    text-align: center;
+
+    @include tablet {
+        max-width: 200px;
+        text-align: start;
+    }
+}
