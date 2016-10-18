@@ -1,19 +1,12 @@
 $(document).ready(function () {
 
-// HEADER SHRINK @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$('#newsSearch').on('change', function() {
-   $('.menu').addClass('headerShrink');
-});
-
-// LOADING SIGN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-$('#newsSearch').on('change', function() {
-   $('.loading').show();
-});
-
 // FETCHING API @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-  $('#newsSearch').on('change', function (event) {
+  $('#categorySelect').heapbox({'onChange': function () {
+
+    $('.menu').addClass('headerShrink');
+    $('.loading').show();
+
     var select = $('select').val();
-    event.preventDefault();
     var url = "https://api.nytimes.com/svc/topstories/v2/" + select + ".json";
     url += '?' + $.param({
       'api-key': "323a596153c34f5bb7b9b12f4b1f396b"
@@ -24,8 +17,12 @@ $('#newsSearch').on('change', function() {
       method: 'GET',
     }).done(function (data) {
       console.log(data);
-      var apiData = data.results;
       var newsData = '';
+      var apiData = data.results.filter(function(value) {
+        return value.multimedia.length >= 5;
+      })
+
+      apiData.splice(12);
 
 // GOING THRU EACH ARRAY @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       $.each(apiData, function (key, value) {
@@ -33,8 +30,6 @@ $('#newsSearch').on('change', function() {
         var apiMedia = value.multimedia;
         var abstract = value.abstract;
         var apiUrl = value.url;
-        
-        if (apiMedia.length > 0) {
 
         newsData += '<li>';
         newsData += '<a href="'+apiUrl+'">'
@@ -42,10 +37,8 @@ $('#newsSearch').on('change', function() {
         newsData += '<p class="articleAbstract">'+abstract+''
         newsData += '</p></div></a></li>'
         
-        }
         $('.topNews').html(newsData);
       });
-
 
     }).fail(function (err) {
       throw err;
@@ -56,7 +49,8 @@ $('#newsSearch').on('change', function() {
     .always(function() {
       $('.loading').hide();
     })
-  });
+
+  } });
 });
 
 

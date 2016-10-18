@@ -3,12 +3,14 @@
 footer {
     text-align: center;
     height: 10vh;
+    margin-bottom: 3rem; 
 
     @include desktop {
-        text-align: start;
+        text-align: left;
     }
     
     p {
         margin: 5%;
+        color: #c2c2c2;
     }
 }
