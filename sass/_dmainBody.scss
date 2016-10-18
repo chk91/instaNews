@@ -7,6 +7,10 @@
     justify-content: center;
     height: 80vh;
     padding: 1.5rem;
+    
+    header {
+        display: none;
+    }
 
     @include tablet {
         align-items: center;

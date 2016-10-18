@@ -40,8 +40,9 @@ $(document).ready(function () {
         $('.topNews').html(newsData);
       });
 
-    }).fail(function (err) {
-      throw err;
+    }).fail(function () {
+      
+      $('.newsApi').append('<p> Sorry Try Again </p>');
 
     })
 
