@@ -6,8 +6,8 @@ $(document).ready(function () {
     $('.menu').addClass('headerShrink');
     $('.loading').show();
 
-    var select = $('select').val();
-    var url = "https://api.nytimes.com/svc/topstories/v2/" + select + ".json";
+    let select = $('select').val();
+    let url = "https://api.nytimes.com/svc/topstories/v2/" + select + ".json";
     url += '?' + $.param({
       'api-key': "323a596153c34f5bb7b9b12f4b1f396b"
     })
@@ -17,8 +17,8 @@ $(document).ready(function () {
       method: 'GET',
     }).done(function (data) {
       console.log(data);
-      var newsData = '';
-      var apiData = data.results.filter(function(value) {
+      let newsData = '';
+      let apiData = data.results.filter(function(value) {
         return value.multimedia.length >= 5;
       })
 
@@ -27,9 +27,9 @@ $(document).ready(function () {
 // GOING THRU EACH ARRAY @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
       $.each(apiData, function (key, value) {
         
-        var apiMedia = value.multimedia;
-        var abstract = value.abstract;
-        var apiUrl = value.url;
+        let apiMedia = value.multimedia;
+        let abstract = value.abstract;
+        let apiUrl = value.url;
 
         newsData += '<li>';
         newsData += '<a href="'+apiUrl+'">'
