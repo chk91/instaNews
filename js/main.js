@@ -11,7 +11,7 @@ $(document).ready(function () {
     url += '?' + $.param({
       'api-key': "323a596153c34f5bb7b9b12f4b1f396b"
     })
-
+// filtering the articles with images
     $.ajax({
       url: url,
       method: 'GET',
@@ -22,6 +22,7 @@ $(document).ready(function () {
         return value.multimedia.length >= 5;
       })
 
+// Splicing article to 12
       apiData.splice(12);
 
 // GOING THRU EACH ARRAY @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
