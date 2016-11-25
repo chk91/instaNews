@@ -5,7 +5,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
     eslint = require('gulp-eslint'),
-    // sass = require('gulp-sass'),
+    sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
     babel = require('gulp-babel'),
@@ -30,18 +30,18 @@ gulp.task('scripts', function(){  //runs a file that we named default
 
 // GULP SASS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
-// gulp.task('sass', function() {
-//     gulp.src('./sass/style.scss')
-//       .pipe(plumber(plumberErrorHandler))
-//       .pipe(sass())
-//       .pipe(autoprefixer({
-//          browsers: ['last 2 versions']
-//       }))
-//       .pipe(gulp.dest('./build/css'))
-//       .pipe(cssnano())
-//       .pipe(rename('style.min.css'))
-//       .pipe(gulp.dest('./build/css'));
-// });
+gulp.task('sass', function() {
+    gulp.src('./sass/style.scss')
+      .pipe(plumber(plumberErrorHandler))
+      .pipe(sass())
+      .pipe(autoprefixer({
+         browsers: ['last 2 versions']
+      }))
+      .pipe(gulp.dest('./build/css'))
+      .pipe(cssnano())
+      .pipe(rename('style.min.css'))
+      .pipe(gulp.dest('./build/css'));
+});
 
 // compile ES2015 -> ESS
 gulp.task('babel', () => {
@@ -64,7 +64,7 @@ gulp.task('serve', function () {
 });
 
 gulp.task('watch', function(){
-    // gulp.watch("sass/*.scss", ['sass']);
+    gulp.watch("sass/*.scss", ['sass']);
     gulp.watch("js/*.js", ['scripts','lint']);
 });
 

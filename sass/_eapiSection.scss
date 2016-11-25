@@ -51,22 +51,29 @@ select#categorySelect {
         align-self: flex-end;
         line-height: 1.2rem;
         font-size: 1rem;
+        padding: 1.5rem;
     }
 
 }
 
 .articleBox:hover .articleAbstract {    
-    margin-top: 2em;
-    /*padding: 1.05em 1.1em 3em 1.1em;*/
+    margin-top: 0;
+    visibility: visible;
+    max-height: 250px;
 }
 
 .articleAbstract {
     background: rgba(0,0,0,.5);
+    padding: 1.5rem;
+    visibility: hidden;
+    transition: .8s ease-in-out;
+    margin-top: 3rem;
+    max-height: 0;
+
 
     @include desktop {
     overflow: hidden;
-    margin-top: 1000px;
-    transition: 0.6s ease-in-out;
+    transition: .8s ease-in-out;
     text-align: left;
     }
 }
