@@ -204,22 +204,23 @@ select#categorySelect {
     padding: 1.5rem; }
 
 .articleBox:hover .articleAbstract {
-  margin-top: 0;
-  visibility: visible;
-  max-height: 250px; }
+  margin-top: 0; }
+  @media (min-width: 1200px) {
+    .articleBox:hover .articleAbstract {
+      visibility: visible;
+      max-height: 250px; } }
 
 .articleAbstract {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 1.5rem;
-  visibility: hidden;
-  transition: .8s ease-in-out;
-  margin-top: 3rem;
-  max-height: 0; }
+  background: rgba(0, 0, 0, 0.5); }
   @media (min-width: 1200px) {
     .articleAbstract {
       overflow: hidden;
       transition: .8s ease-in-out;
-      text-align: left; } }
+      text-align: left;
+      padding: 1.5rem;
+      margin-top: 3rem;
+      max-height: 0;
+      visibility: hidden; } }
 
 /*FOOTER @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
 footer {
